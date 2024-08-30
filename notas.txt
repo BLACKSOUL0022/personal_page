@@ -1,0 +1,123 @@
+Para empezar de nuevo con este archivo el dia de mañana, tengo que abrir el powershell y ejecutar los 2 scripts que tengo en el package.json
+
+// Esta sección se asegura de que esta todo listo.
+let canvas = document.querySelector('canvas');
+if (!canvas) throw new Error('Canvas not found');
+let ctx = canvas.getContext('2d');
+if (!ctx) throw new Error('Context not available');
+
+// Tamaño del canvas.
+canvas.width = 780;
+canvas.height = 780;
+
+let x: number = 175;
+let y: number = 50;
+let radius: number = 20;
+let dx: number = 2;
+let dy: number = 2;
+
+for (let i = 0; i < 100; i++) {
+
+function drawCircle(): void {
+    ctx!.beginPath();
+    ctx!.arc(x, y, radius, 0, Math.PI * 2);
+
+    // Establece la sombra
+    // Primera sombra
+    ctx!.shadowColor = "rgba(0, 0, 0, 0.3)";
+    ctx!.shadowBlur = 15;
+    ctx!.shadowOffsetX = 5;
+    ctx!.shadowOffsetY = 5;
+    ctx!.fill();
+
+    // Segunda sombra
+    ctx!.shadowColor = "rgba(255, 0, 0, 0.3)";
+    ctx!.shadowBlur = 15;
+    ctx!.shadowOffsetX = -5;
+    ctx!.shadowOffsetY = -5;
+    ctx!.fill();
+
+    // Tercera sombra
+    ctx!.shadowColor = "rgba(255, 0, 0, 0.3)";
+    ctx!.shadowBlur = 15;
+    ctx!.shadowOffsetX = 5;
+    ctx!.shadowOffsetY = -5;
+    ctx!.fill();
+
+    // Cuarta sombra
+    ctx!.shadowColor = "rgba(0, 0, 0, 0.3)";
+    ctx!.shadowBlur = 15;
+    ctx!.shadowOffsetX = -5;
+    ctx!.shadowOffsetY = 5;
+    ctx!.fill();
+
+    ctx!.fillStyle = "rgba(0, 0, 0, 1)";
+    ctx!.fill();
+    ctx!.closePath();
+}
+
+function update(): void {
+    ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
+    drawCircle();
+
+    let randomNumber = Math.random() + 1;
+
+    x += dx;
+    y += dy;
+
+    if (x + radius > canvas!.width || x - radius < 0) {
+        dx = -dx;
+    }
+    if (y + radius > canvas!.height || y - radius < 0) {
+        dy = -dy;
+    }
+
+    requestAnimationFrame(update);
+}
+
+update();
+
+}
+
+/////////// Este codigo hace un monton de bolitas de colores en lugares aleatorios.
+// Una vez terminado el codigo, escribir en consola npx tsc para convertir el archivo de Typescript a Javascript.
+
+let canvas = document.querySelector('canvas');
+if (!canvas) {
+    console.error('Canvas not found');
+} else {
+
+let c = canvas.getContext("2d");
+canvas.width = 600;
+canvas.height = 600;
+    if (!c) {
+        console.error('Context not available');
+    } else {
+
+        let radius = 20;
+        for (let i = 0; i < 100; i++) {
+            let x = Math.random() * (canvas.width - radius * 2) + radius;
+            let y = Math.random() * (canvas.height - radius * 2) + radius;
+
+            let rColor = Math.random() * 255;
+            let gColor = Math.random() * 255;
+            let bColor = Math.random() * 255; bColor = Math.random() * 255; bColor = Math.random() * 255;
+
+            //c.fillStyle = "rgba(0,0,0,1)"; // Color
+            //c.fillRect(40, 40, 100, 100); // Dibuja un cuadrado
+
+
+            // Configura el estilo para el círculo
+            c.strokeStyle = "rgba(255,0,0,1)"; // Color rojo para el borde
+            c.lineWidth = 1; // Ancho del borde
+
+            // Dibuja el círculo
+            c.beginPath();
+            c.arc(x, y, radius, 0, 2 * Math.PI); // Coordenadas del centro, radio, ángulos
+            c.closePath();
+            c.fillStyle = `rgba(${rColor}, ${gColor}, ${bColor}, 0.5)`; // Color azul semitransparente para el relleno
+            c.fill(); // Rellena el círculo con el color especificado
+            //c.stroke(); // Dibuja el borde del círculo con el color y ancho especificado
+        }
+    }
+}
