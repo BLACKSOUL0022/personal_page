@@ -1,82 +1,77 @@
 "use strict";
 /* Pasos para desarrollar el codigo
 
-1. Definir el canvas y establecer el contexto 2D.
-2. Crear una función para la creación de varios circulos.
-3. Añadir el movimiento a cada uno de esos circulos.
+1. Definir el canvas y establecer el contexto 2D.            Listo
+2. Crear una función para la creación de varios circulos.    Listo
+3. Añadir el movimiento a cada uno de esos circulos.         En progreso
 4. Añadir el rebote al canvas cuando los circulos salen de las bordas.
 
 */
-// Esta sección define el canvas y establece el contexto 2D. Paso 1.0
+// Configuración básica del canvas y el contexto
 let canvas = document.querySelector('canvas');
 if (!canvas)
     throw new Error('Canvas not found');
 let ctx = canvas.getContext('2d');
 if (!ctx)
     throw new Error('Context not available');
-// Tamaño del canvas.
-canvas.width = 780;
-canvas.height = 780;
-// Variables para la animación.
-let radius = 20;
-let x = Math.random() * (canvas.width - radius * 2) + radius;
-let y = Math.random() * (canvas.height - radius * 2) + radius;
-let dx = 2;
-let dy = 2;
-for (let i = 0; i < 5; i++) {
-    function drawCircle() {
+// Redimensiona el canvas al tamaño de la ventana
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let circles = [];
+let firstcirclesQuantity = window.innerWidth / 8; // Optimiza el rendimiento para pantallas chicas
+let fQN = Math.floor(firstcirclesQuantity); // Redondea hacia abajo
+// Crear los círculos iniciales
+for (let i = 0; i < fQN; i++) {
+    let radius = Math.random() * 4 + 2; // Radio del círculo
+    let x = Math.random() * (canvas.width - radius * 3) + radius * 1.5; // Posicion horizontal
+    let baseY = Math.random() * (canvas.height - radius * 3) + radius * 1.5; // Posicion vertical
+    let speed = (radius * 0.004); // Velocidad ajustada
+    let angle = Math.random() * Math.PI; // Ángulo inicial aleatorio
+    let amplitude = radius; // Amplitud del movimiento basada en el tamaño
+    circles.push({ radius, x, y: baseY, baseY, speed, angle, amplitude });
+}
+// Dibujar los círculos y aplicar la animación
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas
+    circles.forEach(circle => {
+        // Calcular la nueva posición Y usando una función seno
+        circle.y = circle.baseY + Math.sin(circle.angle) * circle.amplitude;
+        // Actualizar el ángulo para el siguiente frame
+        circle.angle += circle.speed;
+        // Dibuja el círculo
         ctx.beginPath();
-        ctx.arc(x, y, radius, 0, Math.PI * 2);
-        // Establece la sombra
-        // Primera sombra
-        ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
-        ctx.shadowBlur = 15;
-        ctx.shadowOffsetX = 5;
-        ctx.shadowOffsetY = 5;
-        ctx.fill();
-        // Segunda sombra
-        ctx.shadowColor = "rgba(255, 0, 0, 0.3)";
-        ctx.shadowBlur = 15;
-        ctx.shadowOffsetX = -5;
-        ctx.shadowOffsetY = -5;
-        ctx.fill();
-        // Tercera sombra
-        ctx.shadowColor = "rgba(255, 0, 0, 0.3)";
-        ctx.shadowBlur = 15;
-        ctx.shadowOffsetX = 5;
-        ctx.shadowOffsetY = -5;
-        ctx.fill();
-        // Cuarta sombra
-        ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
-        ctx.shadowBlur = 15;
-        ctx.shadowOffsetX = -5;
-        ctx.shadowOffsetY = 5;
-        ctx.fill();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(0, 0, 0, 1)";
         ctx.fill();
         ctx.closePath();
-    }
-    drawCircle();
-    /*
-    function update(): void {
-        ctx!.clearRect(0, 0, canvas!.width, canvas!.height);
-        drawCircle();
-    
-        let randomNumber = Math.random() + 1;
-    
-        x += dx;
-        y += dy;
-    
-        if (x + radius > canvas!.width || x - radius < 0) {
-            dx = -dx;
-        }
-        if (y + radius > canvas!.height || y - radius < 0) {
-            dy = -dy;
-        }
-    
-        requestAnimationFrame(update);
-    }
-    
-    update();
-    */
+        // Aplicar sombras
+        ctx.shadowColor = "rgba(0, 0, 0, 1)";
+        ctx.shadowBlur = 5;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+        ctx.fill();
+    });
+    requestAnimationFrame(draw); // Llama a draw para el siguiente frame
 }
+// Redimensionar el canvas y redibujar los círculos
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let circlesQuantity = window.innerWidth / 8; // Optimiza el rendimiento para pantallas chicas
+    let circlesQuantityNumber = Math.floor(circlesQuantity); // Redondea hacia abajo
+    // Redibuja el contenido después de redimensionar
+    circles = [];
+    for (let i = 0; i < circlesQuantityNumber; i++) {
+        let radius = Math.random() * 2 + 2;
+        let x = Math.random() * (canvas.width - radius * 3) + radius * 1.5;
+        let baseY = Math.random() * (canvas.height - radius * 3) + radius * 1.5;
+        let speed = (Math.random() * 0.02) + 0.01; // Velocidad ajustada
+        let amplitude = radius * 2; // Amplitud del movimiento basada en el tamaño
+        let angle = Math.random() * Math.PI * 2; // Ángulo inicial aleatorio
+        circles.push({ x, y: baseY, radius, baseY, angle, speed, amplitude });
+    }
+}
+// Agrega el listener para redimensionar la ventana
+window.addEventListener('resize', resize);
+// Iniciar la animación
+draw();

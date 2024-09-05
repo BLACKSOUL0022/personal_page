@@ -3,9 +3,206 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* General */
-
-
+/*Fonts*/
+@font-face {
+    font-family: 'Italianno-Regular';
+    src: url('/fonts/Italianno-Regular.ttf');
+}
+@font-face {
+    font-family: 'JuliusSansOne-Regular';
+    src: url('/fonts/JuliusSansOne-Regular.ttf');
+}
+@font-face {
+    font-family: 'Italiana-Regular';
+    src: url('/fonts/Italiana-Regular.ttf');
+}
+@font-face {
+    font-family: 'ShipporiMinchoB1-SemiBold';
+    src: url('/fonts/ShipporiMinchoB1-SemiBold.ttf');
+}
 
 /*Desktop */
+
+.titleh1{
+    font-family: 'Italianno-Regular';
+    text-shadow: 0 0 20px rgba(105, 191, 232, 1);
+}
+h1 span{
+    display: inline-block;
+    animation: wave 5s ease-in-out infinite;
+}
+
+h1 span:nth-child(1){
+    animation-delay: 0.1s;
+}
+h1 span:nth-child(2){
+    animation-delay: 0.2s;
+}
+h1 span:nth-child(3){
+    animation-delay: 0.3s;
+}
+h1 span:nth-child(4){
+    animation-delay: 0.4s;
+}
+h1 span:nth-child(5){
+    animation-delay: 0.5s;
+}
+h1 span:nth-child(6){
+    animation-delay: 0.6s;
+}
+h1 span:nth-child(7){
+    animation-delay: 0.7s;
+}
+h1 span:nth-child(8){
+    animation-delay: 0.8s;
+}
+h1 span:nth-child(9){
+    animation-delay: 0.9s;
+}
+h1 span:nth-child(10){
+    animation-delay: 1s;
+}
+h1 span:nth-child(11){
+    animation-delay: 1.1s;
+}
+h1 span:nth-child(12){
+    animation-delay: 1.2s;
+}
+h1 span:nth-child(13){
+    animation-delay: 1.3s;
+}
+h1 span:nth-child(14){
+    animation-delay: 1.4s;
+}
+h1 span:nth-child(15){
+    animation-delay: 1.5s;
+}
+h1 span:nth-child(16){
+    animation-delay: 1.6s;
+}
+
+@keyframes wave {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(5px);}
+    100% {transform: translateY(0);}
+}
+
+/* article1 */
+.article1_h2, .article2_h2, .article3_h2, .myDescription {
+    font-family: 'JuliusSansOne-Regular';
+}
+
+.contact_h3 {
+    font-family: 'ShipporiMinchoB1-SemiBold';
+}
+
+.article2_p {
+    font-family: 'ShipporiMinchoB1-SemiBold';
+}
+.article2 {
+    filter: invert(1);
+}
+/* Skills */ /* EL primer skill va a ser la configuracion general de los demas */
+.tec1 {
+    transform: rotateX(60deg) rotateZ(-30deg);
+    transform-style: preserve-3d; /* Mantiene el efecto 3D */
+    position: relative;
+  }
+
+.tec1::before, .tec1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+    top: 105%;
+    left: -9%;
+    transform: rotateX(90deg) rotateY(0deg);
+    transition: all 0.3s ease;
+    filter: invert(1);
+}
+.tec1::after {
+    top: 56%;
+    left: -59%;
+    transform: rotateX(90deg) rotateY(90deg);
+}
+
+.tec1, .tec1_1 {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+.tec1_1::before, .tec1_1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(1);
+}
+.tec1_1::after {
+    background-image: url('/images/html.png');
+}
+
+
+.skills_container_ul_li1:hover .tec1::before, 
+.skills_container_ul_li1:hover .tec1::after,
+
+.skills_container_ul_li1:hover .tec1_1::before,
+.skills_container_ul_li1:hover .tec1_1::after {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #fff;
+}
+
+.skills_container_ul_li1:hover .tec1, 
+.skills_container_ul_li1:hover .tec1_1 {
+    box-shadow: 0px 0px 10px #000;
+}
+.skills_container_ul_li1:hover .tec1_1,
+.skills_container_ul_li1:hover .tec1_1::before {
+    transform: translate(15px, -25px);
+}
+
+.skills_container_ul_li1:hover .tec1_1::after {
+    transform: translate(30px, -50px);
+}
+
+.skills_container_ul_li1 .tec1_h3 {
+    opacity: 0;
+    color: #000;
+    font-family: 'JuliusSansOne-Regular';
+    transition: all 0.3s ease;
+}
+
+.skills_container_ul_li1:hover .tec1_h3 {
+    opacity: 1;
+}
+
+/*skill 2*/
+.tec2_1::after {
+    background-image: url('/images/css.png');
+}
+.tec3_1::after {
+    background-image: url('/images/bootstrap.png');
+}
+.tec4_1::after {
+    background-image: url('/images/tailwind.png');
+}
+.tec5_1::after {
+    background-image: url('/images/javascript.png');
+}
+.tec6_1::after {
+    background-image: url('/images/nodejs.png');
+}
+.tec7_1::after {
+    background-image: url('/images/mysql_dolphin.png');
+}
+.tec8_1::after {
+    background-image: url('/images/github.png');
+}

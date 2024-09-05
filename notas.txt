@@ -121,3 +121,53 @@ canvas.height = 600;
         }
     }
 }
+
+/////////////
+
+Iba a hacer un codigo para que se vean las tecnologias en 3D, pero no es nada optimo.
+.square-plate {
+    width: 100px; /* Ancho del plato */
+    height: 100px; /* Alto del plato */
+    background-color: #fff; /* Color del plato */
+    background-image: url('images/html.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateX(75deg) rotateY(-0deg) rotateZ(45deg); /* Rotación del plato */
+    transform-style: preserve-3d; /* Mantiene el efecto 3D */
+    position: relative;
+  }
+  
+.square-plate::before {
+    content: '';
+    position: absolute;    
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg); /* Rotación del plato */
+    top: 89%;
+    left: 14%;
+    margin-top: 20px;
+    margin-left: 0px;
+    width: 100%;
+    height: 10px;
+    background-color: #ccc; /* Color del plato */
+}
+.square-plate::after {
+    content: '';
+    position: absolute;    
+    transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg); /* Rotación del plato */
+    top: 59%;
+    left: 64%;
+    margin-top: 0px;
+    margin-left: 0px;
+    width: 100%;
+    height: 10px;
+    background-color: #ccc; /* Color del plato */
+}
+
+.square-plate img {
+    width: 100%;
+    height: 90%;
+    margin-top: 5%;
+    object-fit: contain;
+    transform: rotateX(0deg) rotateY(-0deg) rotateZ(-90deg); /* Rotación del plato */
+}
+

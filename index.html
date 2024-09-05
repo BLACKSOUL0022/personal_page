@@ -3,21 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Page v3</title>
+    <title>Página personal v3 - Mi portafolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link href="./dist/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
 </head>
 
-<body>
+<body class="overflow-x-hidden">
 
-    <main class="w-screen h-screen bg-slate-600 flex items-center">
-        <div class="container bg-black w-800 min-w-800 h-800 m-auto flex items-center">
+    <main class="w-screen h-auto flex flex-wrap relative px-0">
+        <aside class="container bg-slate-900 xl:w-[33.65%] lg:w-1/2 w-full max-w-full h-full min-h-screen lg:fixed relative z-30 ">
+            <h1 name="Title" class=" titleh1 lg:text-7xl text-4xl text-sky-300 h-auto w-3/4 m-auto lg:mt-32 mt-20">
+                <span>H</span><span>o</span><span>l</span><span>a</span><span>!</span><span>,</span>
+                <span>S</span><span>o</span><span>y</span> 
+                <span>D</span><span>i</span><span>e</span><span>g</span><span>o</span> 
+                <span>C</span><span>M</span>
+            </h1>
 
-            <canvas class="bg-white m-auto outline outline-0 outline-red-600">
+            <p class="myDescription lg:text-2xl text-xl text-justify text-sky-300 h-auto w-3/4 m-auto mt-32 ">
+                Y soy un estudiante de ingeniería en sistemas computacionales,
+                enfocado en aprender el desarrollo web FullStack. Disfruto aprendiendo 
+                nuevas tecnologías y me encanta resolver desafíos con soluciones 
+                creativas e innovadoras. Soy proactivo, autodidacta y siempre estoy 
+                en constante aprendizaje, listo para aportar con entusiasmo y dedicación.
+            </p>
+
+            <div class="contact w-3/4 flex mx-auto lg:mt-40 mt-20 gap-12">
+                <a href="#">
+                    <img src="images/githubPNG.png" alt="github" class="github h-12 w-12 transform transition duration-300 hover:scale-110">
+                </a>
+                <a href="#">
+                    <img src="images/whatsappSVG.svg" alt="whatsapp" class="whatsapp h-12 w-12 transform transition duration-300 hover:scale-110">
+                </a>
+            </div>
+            <h3 class="contact_h3 text-xl text-sky-300 h-auto w-3/4 m-auto mt-3 mb-8">diegolz100000@gmail.com</h3>
+        </aside>
+        
+        <div name="canvas" class="container xl:w-2/3 lg:w-1/2 w-full h-full fixed right-0 z-0 flex">
+            <canvas class="absolute z-0">
             </canvas>
-
         </div>
+        
+        <section class="container1 container xl:w-2/3 lg:w-[52%] w-full max-w-none h-auto lg:absolute relative right-0 z-20">
+            <article name="welcome" class="article1 h-screen w-full flex justify-center">
+                <h2 class="article1_h2 xl:text-5xl lg:text-4xl text-2xl w-auto flex flex-wrap items-center">
+                    Bienvenid@ a mi página
+                </h2>
+            </article>
+
+            <article name="about me" class="article2 w-full flex flex-wrap justify-center backdrop-blur-sm">
+                <h2 class="article2_h2 lg:text-5xl text-2xl h-12 w-full flex items-center justify-center lg:my-40 my-20">
+                    Sobre mí
+                </h2>
+                <p name="about me: description" class="article2_p lg:text-2xl text-lg text-slate-900 flex items-center w-3/4 mb-72 lg:text-center text-justify">
+                    Tengo 22 años y desde corta edad me ha fascinado la tecnología. Siempre he tenido
+                    una gran curiosidad y una habilidad innata para manejar ordenadores. La curiosidad 
+                    ha sido siempre mi principal impulso, llevándome a buscar constantemente respuestas y soluciones 
+                    a cualquier problema que encuentre. Actualmente, estoy concluyendo mis estudios en UTEL, 
+                    donde he desarrollado las bases en varias tecnologías. Además, soy apasionado por el 
+                    aprendizaje continuo y disfruto tomando cursos para mejorar tanto mis habilidades 
+                    técnicas como las blandas. También estoy comprometido con el aprendizaje de nuevos 
+                    idiomas y actualmente estoy estudiando inglés para poder comunicarme eficazmente en 
+                    un entorno global.
+                </p> 
+            </article>
+
+            <article name="skills" class="article3 w-full flex flex-wrap justify-center">
+                <h2 class="article3_h2 lg:text-5xl text-2xl h-12 w-full flex items-center justify-center lg:mt-60 my-20">
+                    Habilidades
+                </h2>
+                <div class="skills_container xl:w-3/4 w-11/12 h-400 mb-300">
+
+                    <ul class="skills_container_ul flex flex-wrap justify-center min-h-full h-auto w-full">
+                        <li class="skills_container_ul_li1 xl:h-1/2 xl:w-1/4 h-44  w-1/2 flex flex-wrap items-center justify-center">
+                            <div class="tec1 w-full h-4/5 bg-green-900">
+                                <div class="tec1_1">
+                                </div>
+                            </div>
+                            <h3 class="tec1_h3 lg:text-2xl text-xl text-slate-900 flex items-center justify-center w-full h-1/5">
+                                HTML5
+                            </h3>
+                        </li>
+                        <li>
+                            <div class="tec2">
+                            </div>
+                        </li>
+
+                        <li class="skills_container_ul_li1 xl:h-1/2 xl:w-1/4 h-44  w-1/2 flex flex-wrap items-center justify-center">
+                            <div class="tec1 w-full h-4/5 bg-green-900">
+                                <div class="tec1_1 tec2_1">
+                                </div>
+                            </div>
+                            <h3 class="tec1_h3 lg:text-2xl text-xl text-slate-900 flex items-center justify-center w-full h-1/5">
+                                CSS3
+                            </h3>
+                        </li>
+                        
+                        <li class="skills_container_ul_li1 xl:h-1/2 xl:w-1/4 h-44  w-1/2 flex flex-wrap items-center justify-center">
+                            <div class="tec1 w-full h-4/5 bg-green-900">
+                                <div class="tec1_1 tec3_1">
+                                </div>
+                            </div>
+                            <h3 class="tec1_h3 lg:text-2xl text-xl text-slate-900 flex items-center justify-center w-full h-1/5">
+                                BOOTSTRAP
+                            </h3>
+                        </li>
+
+                        <li class="skills_container_ul_li1 xl:h-1/2 xl:w-1/4 h-44  w-1/2 flex flex-wrap items-center justify-center">
+                            <div class="tec1 w-full h-4/5 bg-green-900">
+                                <div class="tec1_1 tec4_1">
+                                </div>
+                            </div>
+                            <h3 class="tec1_h3 lg:text-2xl text-xl text-slate-900 flex items-center justify-center w-full h-1/5">
+                                TAILWIND
+                            </h3>
+                        </li>
+                        
+                        <li class="skills_container_ul_li1 xl:h-1/2 xl:w-1/4 h-44  w-1/2 flex flex-wrap items-center justify-center">
+                            <div class="tec1 w-full h-4/5 bg-green-900">
+                                <div class="tec1_1 tec5_1">
+                                </div>
+                            </div>
+                            <h3 class="tec1_h3 lg:text-2xl text-xl text-slate-900 flex items-center justify-center w-full h-1/5">
+                                JAVASCRIPT
+                            </h3>
+                        </li>
+
+                        <li class="skills_container_ul_li1 xl:h-1/2 xl:w-1/4 h-44  w-1/2 flex flex-wrap items-center justify-center">
+                            <div class="tec1 w-full h-4/5 bg-green-900">
+                                <div class="tec1_1 tec6_1">
+                                </div>
+                            </div>
+                            <h3 class="tec1_h3 lg:text-2xl text-xl text-slate-900 flex items-center justify-center w-full h-1/5">
+                                NODE JS
+                            </h3>
+                        </li>
+
+                        <li class="skills_container_ul_li1 xl:h-1/2 xl:w-1/4 h-44  w-1/2 flex flex-wrap items-center justify-center">
+                            <div class="tec1 w-full h-4/5 bg-green-900">
+                                <div class="tec1_1 tec7_1">
+                                </div>
+                            </div>
+                            <h3 class="tec1_h3 lg:text-2xl text-xl text-slate-900 flex items-center justify-center w-full h-1/5">
+                                MYSQL
+                            </h3>
+                        </li>
+
+                        <li class="skills_container_ul_li1 xl:h-1/2 xl:w-1/4 h-44  w-1/2 flex flex-wrap items-center justify-center">
+                            <div class="tec1 w-full h-4/5 bg-green-900">
+                                <div class="tec1_1 tec8_1">
+                                </div>
+                            </div>
+                            <h3 class="tec1_h3 lg:text-2xl text-xl text-slate-900 flex items-center justify-center w-full h-1/5">
+                                GITHUB + GIT
+                            </h3>
+                        </li>
+                    </ul>
+                        
+                    
+                    
+                    
+
+                </div>
+            </article>
+
+        </section>
+
     </main>
 
     <script src="index.js"></script>
