@@ -147,7 +147,7 @@ h1 span:nth-child(16){
     filter: invert(1);
 }
 .tec1_1::after {
-    background-image: url('images/html.png');
+    background-image: url('../images/html.png');
 }
 
 
@@ -186,23 +186,23 @@ h1 span:nth-child(16){
 
 /*skill 2*/
 .tec2_1::after {
-    background-image: url('images/css.png');
+    background-image: url('../images/css.png');
 }
 .tec3_1::after {
-    background-image: url('images/bootstrap.png');
+    background-image: url('../images/bootstrap.png');
 }
 .tec4_1::after {
-    background-image: url('images/tailwind.png');
+    background-image: url('../images/tailwind.png');
 }
 .tec5_1::after {
-    background-image: url('images/javascript.png');
+    background-image: url('../images/javascript.png');
 }
 .tec6_1::after {
-    background-image: url('images/nodejs.png');
+    background-image: url('../images/nodejs.png');
 }
 .tec7_1::after {
-    background-image: url('images/mysql_dolphin.png');
+    background-image: url('../images/mysql_dolphin.png');
 }
 .tec8_1::after {
-    background-image: url('images/github.png');
+    background-image: url('../images/github.png');
 }
