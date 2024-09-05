@@ -767,11 +767,6 @@ video {
   background-color: rgb(20 83 45 / var(--tw-bg-opacity));
 }
 
-.bg-slate-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
@@ -854,25 +849,25 @@ video {
 @font-face {
   font-family: 'Italianno-Regular';
 
-  src: url('/fonts/Italianno-Regular.ttf');
+  src: url('fonts/Italianno-Regular.ttf');
 }
 
 @font-face {
   font-family: 'JuliusSansOne-Regular';
 
-  src: url('/fonts/JuliusSansOne-Regular.ttf');
+  src: url('fonts/JuliusSansOne-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Italiana-Regular';
 
-  src: url('/fonts/Italiana-Regular.ttf');
+  src: url('fonts/Italiana-Regular.ttf');
 }
 
 @font-face {
   font-family: 'ShipporiMinchoB1-SemiBold';
 
-  src: url('/fonts/ShipporiMinchoB1-SemiBold.ttf');
+  src: url('fonts/ShipporiMinchoB1-SemiBold.ttf');
 }
 
 /*Desktop */
@@ -1034,7 +1029,7 @@ h1 span:nth-child(16){
 }
 
 .tec1_1::after {
-  background-image: url('/images/html.png');
+  background-image: url('images/html.png');
 }
 
 .skills_container_ul_li1:hover .tec1::before, 
@@ -1074,31 +1069,31 @@ h1 span:nth-child(16){
 /*skill 2*/
 
 .tec2_1::after {
-  background-image: url('/images/css.png');
+  background-image: url('images/css.png');
 }
 
 .tec3_1::after {
-  background-image: url('/images/bootstrap.png');
+  background-image: url('images/bootstrap.png');
 }
 
 .tec4_1::after {
-  background-image: url('/images/tailwind.png');
+  background-image: url('images/tailwind.png');
 }
 
 .tec5_1::after {
-  background-image: url('/images/javascript.png');
+  background-image: url('images/javascript.png');
 }
 
 .tec6_1::after {
-  background-image: url('/images/nodejs.png');
+  background-image: url('images/nodejs.png');
 }
 
 .tec7_1::after {
-  background-image: url('/images/mysql_dolphin.png');
+  background-image: url('images/mysql_dolphin.png');
 }
 
 .tec8_1::after {
-  background-image: url('/images/github.png');
+  background-image: url('images/github.png');
 }
 
 .hover\:scale-110:hover {
@@ -1137,22 +1132,6 @@ h1 span:nth-child(16){
     width: 50%;
   }
 
-  .lg\:w-\[50\%\] {
-    width: 50%;
-  }
-
-  .lg\:w-\[55\%\] {
-    width: 55%;
-  }
-
-  .lg\:w-\[85\%\] {
-    width: 85%;
-  }
-
-  .lg\:w-\[54\%\] {
-    width: 54%;
-  }
-
   .lg\:w-\[52\%\] {
     width: 52%;
   }
@@ -1187,10 +1166,6 @@ h1 span:nth-child(16){
     height: 50%;
   }
 
-  .xl\:w-1\/3 {
-    width: 33.333333%;
-  }
-
   .xl\:w-1\/4 {
     width: 25%;
   }
@@ -1201,26 +1176,6 @@ h1 span:nth-child(16){
 
   .xl\:w-3\/4 {
     width: 75%;
-  }
-
-  .xl\:w-5\/12 {
-    width: 41.666667%;
-  }
-
-  .xl\:w-\[40\%\] {
-    width: 40%;
-  }
-
-  .xl\:w-\[34\%\] {
-    width: 34%;
-  }
-
-  .xl\:w-\[33\.5\%\] {
-    width: 33.5%;
-  }
-
-  .xl\:w-\[33\.6\%\] {
-    width: 33.6%;
   }
 
   .xl\:w-\[33\.65\%\] {
